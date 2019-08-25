@@ -1,3 +1,3 @@
 # ActivityIndicatorView
 
-A description of this package.
+SwiftUI wrapper for UIActivityIndicatorView.
