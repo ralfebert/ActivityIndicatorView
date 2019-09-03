@@ -7,7 +7,8 @@ let package = Package(
     name: "ActivityIndicatorView",
     platforms: [
         .iOS(.v13),
-        .tvOS(.v13)
+        .macOS(.v10_15),
+        .tvOS(.v13),
     ],
     products: [
         .library(
@@ -24,5 +25,8 @@ let package = Package(
         .testTarget(
             name: "ActivityIndicatorViewTests",
             dependencies: ["ActivityIndicatorView"]),
+    ],
+    swiftLanguageVersions: [
+        .version("5.1")
     ]
 )

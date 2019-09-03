@@ -1,16 +1,16 @@
 import SwiftUI
 
-struct ActivityIndicatorView: UIViewRepresentable {
+public struct ActivityIndicatorView: UIViewRepresentable {
     @Binding var isAnimating: Bool
     
     private var style: UIActivityIndicatorView.Style?
 
-    init(isAnimating: Binding<Bool>, style: UIActivityIndicatorView.Style? = nil) {
+    public init(isAnimating: Binding<Bool>, style: UIActivityIndicatorView.Style? = nil) {
         _isAnimating = isAnimating
         self.style = style
     }
     
-    func makeUIView(context: Context) -> UIActivityIndicatorView {
+    public func makeUIView(context: Context) -> UIActivityIndicatorView {
         guard let style = self.style else {
             return UIActivityIndicatorView()
         }
@@ -18,7 +18,7 @@ struct ActivityIndicatorView: UIViewRepresentable {
         return UIActivityIndicatorView(style: style)
     }
     
-    func updateUIView(_ uiView: UIActivityIndicatorView, context: Context) {
+    public func updateUIView(_ uiView: UIActivityIndicatorView, context: Context) {
         isAnimating ? uiView.startAnimating() : uiView.stopAnimating()
     }
 }
