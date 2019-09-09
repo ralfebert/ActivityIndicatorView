@@ -25,3 +25,9 @@ public struct ActivityIndicatorView: UIViewRepresentable {
         isAnimating ? uiView.startAnimating() : uiView.stopAnimating()
     }
 }
+
+public extension ActivityIndicatorView {
+    init(style: UIActivityIndicatorView.Style? = nil, color: UIColor = .systemGray) {
+        self.init(isAnimating: .constant(true), style: style, color: color)
+    }
+}
