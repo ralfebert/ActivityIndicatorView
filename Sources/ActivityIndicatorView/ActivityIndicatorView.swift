@@ -2,12 +2,14 @@ import SwiftUI
 
 public struct ActivityIndicatorView: UIViewRepresentable {
     @Binding var isAnimating: Bool
+    var color: UIColor
     
     private var style: UIActivityIndicatorView.Style?
 
-    public init(isAnimating: Binding<Bool>, style: UIActivityIndicatorView.Style? = nil) {
+    public init(isAnimating: Binding<Bool>, style: UIActivityIndicatorView.Style? = nil, color: UIColor = .systemGray) {
         _isAnimating = isAnimating
         self.style = style
+        self.color = color
     }
     
     public func makeUIView(context: Context) -> UIActivityIndicatorView {
@@ -19,6 +21,7 @@ public struct ActivityIndicatorView: UIViewRepresentable {
     }
     
     public func updateUIView(_ uiView: UIActivityIndicatorView, context: Context) {
+        uiView.color = color
         isAnimating ? uiView.startAnimating() : uiView.stopAnimating()
     }
 }
