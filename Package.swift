@@ -16,15 +16,11 @@ let package = Package(
             targets: ["ActivityIndicatorView"]),
     ],
     dependencies: [
-
     ],
     targets: [
         .target(
             name: "ActivityIndicatorView",
-            dependencies: []),
-        .testTarget(
-            name: "ActivityIndicatorViewTests",
-            dependencies: ["ActivityIndicatorView"]),
+            dependencies: [])
     ],
     swiftLanguageVersions: [
         .version("5.1")
